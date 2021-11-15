@@ -1,0 +1,142 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Portfolio Website</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <style>
+body {
+  display: block;
+  overflow-x: hidden;
+  background-color: grey;
+}
+nav {
+  background-color: seagreen;
+}
+.navbar-brand img {
+  max-height: 70px;
+}
+.navbar-brand {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #683aa4;
+  margin-top: 15px;
+}
+nav ul li a {
+  color: #ffffff;
+  font-size: 22px;
+  margin: auto 75px;
+}
+nav ul li a:hover {
+  color: #ffffff;
+}
+form{
+      background-color: white;
+      width: 70%
+      padding:25px;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 15px;
+    }
+    
+    .centro{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 15%;
+      height: 15%;
+    }
+    form input[type=number]{
+      width:100%;
+      height:40px;
+      border:1px solid grey;
+      padding-left:5px;
+      margin: 5px 0px;
+      text-align: center;
+      }
+      
+    form input[type=button]{
+      width:100%;
+      height:40px;
+      cursor:pointer;
+      background: darkseagreen;
+      color:white;
+      border: 0;
+      border-radius: 25px;
+    }
+    h1{
+      text-align: center;
+      color: darkseagreen;
+    }
+    p {
+      text-align: center;
+      background-color: greenyellow;
+      color: black;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img class="logo" src="br_logo.png" /> Brasileirão
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Times</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Jogadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Informações</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<form>
+      <h1> PONTOS </h1>
+      <input type="number" name=vitorias placeholder="Vitorias" min="0"/>
+      <input type="number" name="empates" placeholder="Empates" min="0"/>
+      <input type="number" name="derrota" placeholder="Derrotas" min="0"/>
+      <input type="button" name="enviar" placeholder="Enviar" onclick="pontuar()" />
+      <p id="resultado">
+      </p>
+    </form>
+     <script type="text/javascript">
+            function pontos(vitorias,empates,derrota){
+                vitorias = vitorias * 3;
+                derrota = derrota * 0;
+                return (vitorias + empates + derrota);
+            }
+            function pontuar(){
+                var _vitorias = document.getElementById("vitorias");
+                var _empates = document.getElementById("empates");
+                var _derrota = document.getElementById("derrota");
+
+                var vitorias = parseInt(_vitorias.value);
+                var empates = parseInt(_empates.value);
+                var derrota = parseInt(_derrota.value);
+
+                var total_pontos = pontos(vitorias,empates,derrota);
+                alert(totla_pontos)
+            }
+        </script>
+  </body>
+</html>
