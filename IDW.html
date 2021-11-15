@@ -126,16 +126,15 @@ form{
                 return (vitorias + empates + derrota);
             }
             function pontuar(){
-                var _vitorias = document.getElementById("vitorias");
-                var _empates = document.getElementById("empates");
-                var _derrota = document.getElementById("derrota");
-
-                var vitorias = parseInt(_vitorias.value);
-                var empates = parseInt(_empates.value);
-                var derrota = parseInt(_derrota.value);
+                var vitorias = document.getElementById("vitorias");
+                var empates = document.getElementById("empates");
+                var derrota = document.getElementById("derrota");
 
                 var total_pontos = pontos(vitorias,empates,derrota);
-                alert(totla_pontos)
+                var resultado = document.getElementById("resultado");
+
+                  resultado.innerHTML = `O seu time fez: ${total_pontos} pontos
+
             }
         </script>
   </body>
