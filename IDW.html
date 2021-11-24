@@ -39,28 +39,62 @@
 </nav>
 <form>
       <h1> PONTOS </h1>
-      <input type="number" name=vitorias placeholder="Vitorias" min="0"/>
-      <input type="number" name="empates" placeholder="Empates" min="0"/>
-      <input type="number" name="derrota" placeholder="Derrotas" min="0"/>
+      <input type="text" name="time" placeholder="Nome do seu Time" id="time"/>
+      <input type="number" name="vitorias" placeholder="Vitorias" min="0" id="vitorias"/>
+      <input type="number" name="empates" placeholder="Empates" min="0" id="empates"/>
+      <input type="number" name="derrota" placeholder="Derrotas" min="0" id="derrota"/>
       <input type="button" name="enviar" placeholder="Enviar" onclick="pontuar()" />
       <p id="resultado">
+      <p id="historico">
       </p>
     </form>
-     <script type="text/javascript">
+     <script type="text/javascript"> 
             function pontos(vitorias,empates,derrota){
-                vitorias = vitorias * 3;
-                derrota = derrota * 0;
-                return (vitorias + empates + derrota);
+                return (vitorias * 3) + (empates * 1) + (derrota * 0);
+            }
+            var pontuacoes = [];
+              if(localStorage.getItem("pontuacoes") !=null){
+                  pontuacoes = JSON.parse(localStorage.getItem("pontuacoes"));
+                  pontuacoes_antigas();
+              }
+            
+
+            function pontuacoes_antigas(){
+                    var pontuacoes_armazenadas = localStorage.getItem("pontuacoes");
+                    var converte = JSON.parse(pontuacoes_armazenadas);
+                    var historico = document.getElementById("historico");
+                    historico.innerHTML = " "; 
+
+                    for(var c=0;c<converte.length;c++){
+                      var h3 = document.createElement("h3");
+                      h3.innerHTML = `Time: ${converte[c]["time"]}  Pontos feitos: ${converte[c]["total_pontos"]} `;
+                      historico.append(h3);
+                    }
+
             }
             function pontuar(){
-                var vitorias = document.getElementById("vitorias");
-                var empates = document.getElementById("empates");
-                var derrota = document.getElementById("derrota");
+                var vitorias = document.getElementById("vitorias").value;
+                var empates = document.getElementById("empates").value;
+                var derrota = document.getElementById("derrota").value;
+                var time =  document.getElementById("time").value;
 
                 var total_pontos = pontos(vitorias,empates,derrota);
                 var resultado = document.getElementById("resultado");
+                  resultado.innerHTML = `O seu time fez: ${total_pontos} pontos`;
 
-                  resultado.innerHTML = `O seu time fez: ${total_pontos} pontos
+            var pontuacao = {
+              "time": time;
+              "vitorias": vitorias;
+              "empates": empates;
+              "derrota": derrota;
+              "total_pontos": total_pontos;
+            };
+
+            pontuacoes.push(pontuacao);
+
+            var informacoes_pontuacao = JSON.stringify(pontuacoes);
+            localStorage.setItem("pontuacoes", informacoes_pontuacao);
+            pontuacoes_antigas();
 
             }
         </script>
