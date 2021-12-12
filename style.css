@@ -1,0 +1,135 @@
+body {
+  display: block;
+  overflow-x: hidden;
+  background-color: grey;
+  background-image: url("midias/estadioFoda.jpg");
+  
+}
+nav {
+  background-color: seagreen;
+}
+.navbar-brand img {
+  max-height: 70px;
+}
+.navbar-brand {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #683aa4;
+  margin-top: 1px;
+}
+nav ul li a {
+  color: #ffffff;
+  font-size: 22px;
+  margin: auto 75px;
+}
+nav ul li a:hover {
+  color: #ffffff;
+}
+form{
+      background-color: white;
+      width: 70%
+      padding:25px;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 15px;
+    }
+    
+    .centro{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 15%;
+      height: 15%;
+    }
+    form input[type=text]{
+      width: 100%;
+      text-align: center;
+      background-color: white;
+    }
+    form input[type=number]{
+      width:100%;
+      height:40px;
+      border:1px solid grey;
+      padding-left:5px;
+      margin: 5px 0px;
+      text-align: center;
+      }
+      
+    form input[type=button]{
+      width:100%;
+      height:40px;
+      cursor:pointer;
+      background: darkseagreen;
+      color:white;
+      border: 0;
+      border-radius: 25px;
+    }
+    h1{
+      text-align: center;
+      color: darkseagreen;
+    }
+    p {
+      text-align: center;
+      background-color: greenyellow;
+      color: black;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.tituloPagina{
+  font-size: 50px;
+  padding-left: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 3px 3px darkblue;
+  color: yellow;
+}
+
+.brasoes{
+
+display: flex;
+align-items: center;
+
+}
+
+.teste{
+  align-items: center;
+
+}
+
+nav{
+  background-image: linear-gradient(#008000, #0000ff, #ffff00);
+}
+body{
+  background-image: url("midias/estadioTamanhoCorreto.jpg"); 
+}
+
+
+.float{
+    padding-top: 150px;
+    width: 33%;
+    float: left;
+}
+.floatR{
+    padding-top: 15px;
+    width: 50%;
+    float: right;
+}
+.floatL{
+    padding-top: 15px;
+    width: 50%;
+    float: left;
+
+}.sobreImg{
+  height: 450px;
+  width: 300px;
+}
+.float2{
+  width: 50%;
+  float:  left;
+}
