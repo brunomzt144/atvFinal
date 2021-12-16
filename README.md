@@ -32,4 +32,3 @@ Utilizamos das seguintes ferramentas:
 <p id="autor">Criadores:</p>
 João Vitor Trindade e Bruno Mazzotti
 
-
